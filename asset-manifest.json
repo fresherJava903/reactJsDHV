@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fresherJava903/reactJsDHV/static/css/main.f0256fe2.css",
+    "main.js": "/fresherJava903/reactJsDHV/static/js/main.e1e3c033.js",
+    "index.html": "/fresherJava903/reactJsDHV/index.html",
+    "main.f0256fe2.css.map": "/fresherJava903/reactJsDHV/static/css/main.f0256fe2.css.map",
+    "main.e1e3c033.js.map": "/fresherJava903/reactJsDHV/static/js/main.e1e3c033.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0256fe2.css",
+    "static/js/main.e1e3c033.js"
+  ]
+}

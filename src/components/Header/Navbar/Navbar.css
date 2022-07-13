@@ -1,0 +1,206 @@
+/* navbar.css */
+
+/* Common style */
+.navigation {
+  position: absolute;
+  top: 0px;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  transition: background-color 0.3s ease-in-out;
+  transform: translate3d(0,0,0);
+  /* -webkit-backface-visibility: hidden; */
+  color: black;
+}
+
+/* push the menu to the right */
+#nav-item:hover{
+  color: rgb(145, 255, 0);
+}
+#nav-item-text:hover{
+  color: rgb(145, 255, 0);
+}
+
+.search-group{
+  position:absolute;
+  right: 50px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.nav-search{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 10px;
+  padding-right: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 100px;
+  border: rgba(255, 255, 255, 1) solid 1px;
+}
+#nav-search-button{
+  border: 0px;
+  opacity: 0.5;
+  size: 20px;
+  display: flex;
+  align-items: center;
+}
+#nav-search-button:hover{
+  opacity: 1;
+}
+#nav-search-box, #nav-search-button{
+  border-width: 0px;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+#nav-search-box:focus{
+  /* set input not hightlgiht when focus */
+  outline-width: 0;
+}
+#nav-search-box{
+  width:20vw;     /* NEEDED */
+  transition:0.3s; -webkit-transition: 0.3s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255, 0.8);
+  border-color: white;
+
+  -webkit-transition: width .55s ease;
+  -moz-transition: width .55s ease;
+  -ms-transition: width .55s ease;
+  -o-transition: width .55s ease;
+  transition: width .55s ease;  
+}
+#nav-search-box:focus{
+  width: calc(20vw + 70px);
+}
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+.brand-name {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+.navigation-menu {
+  margin-top: 50px;
+  margin-left: auto;
+}
+
+/* style the nav menu */
+.navigation-menu ul {
+  display: flex;
+  padding: 0;
+}
+.navigation-menu li {
+  /* removes default disc bullet for li tags and applies margin to left & right side */
+  list-style-type: none;
+  margin: 0 1rem;
+}
+.navigation-menu li a {
+  /* increases the surface area of the anchor tag to span more than just the anchor text */
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 100%;
+}
+
+/* style hamburger */
+.hamburger {
+  /* removes default border on button element */
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  /* positions the icon to the right and center aligns it vertically */
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+.hamburger:hover {
+  background-color: #d1e215;
+}
+
+/* Media queries. change layout depending on conditions, such as viewport width */
+@media screen and (max-width: 950px) {
+  .hamburger {
+    display: block;
+  }
+  .search-group{
+    flex-direction: row-reverse;
+    width: 100%;
+    right: auto;
+  }
+  .nav-search{
+    position:absolute;
+    right:20vw; top: 10px;
+    border: rgba(255, 255, 255, 1) solid 1px;
+  }
+  #nav-item{
+    border-bottom: 1px solid #d1e215;
+  }
+  #nav-item:hover{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  #nav-item-text{
+    color: black;
+  }
+  .navigation{
+    background-color: rgb(235, 171, 88);
+    z-index: 1;
+  }
+  .navigation-menu ul {
+    display: none;
+  }
+  .navigation-menu ul {
+    /* navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar) */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    /* stacks the li tags vertically  */
+    flex-direction: column;
+    /* makes menu span full height and width */
+    width: 100%;
+    height: calc(100vh - 77px);
+    background-color: white;
+    border-top: 1px solid black;
+  }
+  .navigation-menu li {
+    /* centers link text and strips off margin */
+    text-align: center;
+    margin: 0;
+  }
+  .navigation-menu li a {
+    color: black;
+    /* increases the surface area of the anchor tag to span the full width of the menu */
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+  .navigation-menu li:hover {
+    background-color: rgb(235, 171, 20);
+  }
+  .navigation-menu.expanded ul {
+    display: block;
+  }
+}
+
+#nav-item-text{
+  position:absolute;
+  left: 5vw; top: 0;
+  height: calc(288px*0.2);
+  width: calc(668px*0.2);
+}
